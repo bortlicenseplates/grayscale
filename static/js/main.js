@@ -12,6 +12,12 @@ var bgA, bgAM, bgAm;
 var clicked;
 var timeout, timedOut;
 
+function preload(){
+  
+  theFont = loadFont("fonts/destroyed.ttf");
+  greyFont = loadFont("fonts/greyscale.ttf");
+
+}
 
 function setup() {
   timeout = 0;
@@ -22,8 +28,6 @@ function setup() {
   count = 0;
   lNum = word.length + (pad*2);
   fontSize = Math.ceil(windowWidth/lNum);
-  theFont = loadFont("fonts/destroyed.ttf");
-  greyFont = loadFont("fonts/greyscale.ttf");
   bgAM = 255;
   bgAm = 10;
   bgA = bgAm;
