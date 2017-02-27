@@ -21,13 +21,15 @@ function preload(){
 
 function setup() {
   timeout = 0;
-  createCanvas(windowWidth, windowHeight);
+  var cnv = createCanvas(windowWidth*0.99, windowHeight*0.99);
+  cnv.parent("startPage");
+
   background(0); 
   timedOut = false;
   pad = 5;
   count = 0;
   lNum = word.length + (pad*2);
-  fontSize = Math.ceil(windowWidth/lNum);
+  fontSize = Math.ceil(width/lNum);
   bgAM = 255;
   bgAm = 10;
   bgA = bgAm;

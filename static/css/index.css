@@ -1,17 +1,24 @@
-#startpage .p5Container {
+html {
   height: 100%;
 }
-#content {
+html #startpage {
+  min-height: 100%;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+html #content {
   width: 100%;
 }
-.first-section {
+html #content .first-section {
   min-height: 100%;
   background: #646464;
 }
-.second-section {
+html #content .second-section {
   min-height: 100%;
   background: #456712;
 }
-.third-sec {
+html #content .third-sec {
   min-height: 100%;
 }
