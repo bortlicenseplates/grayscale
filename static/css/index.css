@@ -1,6 +1,17 @@
-main {
+#startpage .p5Container {
+  height: 100%;
+}
+#content {
   width: 100%;
 }
-main .p5Container {
-  display: block;
+.first-section {
+  min-height: 100%;
+  background: #646464;
+}
+.second-section {
+  min-height: 100%;
+  background: #456712;
+}
+.third-sec {
+  min-height: 100%;
 }

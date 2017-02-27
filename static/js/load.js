@@ -21,7 +21,7 @@ function preload(){
 
 function setup() {
   timeout = 0;
-  createCanvas(windowWidth, windowHeight); 
+  createCanvas(windowWidth, windowHeight);
   background(0); 
   timedOut = false;
   pad = 5;
@@ -204,5 +204,7 @@ function drawWord(){
 function mousePressed(){
   if (drawWord()){
     clicked = true;
+  } else {
+    return false;
   }
 }
