@@ -15,21 +15,18 @@ var timeout, timedOut;
 function preload(){
   
   theFont = loadFont("fonts/destroyed.ttf");
-  greyFont = loadFont("fonts/greyscale.ttf");
+  greyFont = loadFont("fonts/grayscale.ttf");
 
 }
 
 function setup() {
   timeout = 0;
-  var cnv = createCanvas(windowWidth*0.99, windowHeight*0.99);
-  cnv.parent("startPage");
-
-  background(0); 
+  
   timedOut = false;
   pad = 5;
   count = 0;
   lNum = word.length + (pad*2);
-  fontSize = Math.ceil(width/lNum);
+  fontSize = Math.ceil(windowWidth/lNum);
   bgAM = 255;
   bgAm = 10;
   bgA = bgAm;
@@ -39,20 +36,24 @@ function setup() {
   textSize(fontSize);
   //noLoop();
   //frameRate(25);
+
+  var cnv = createCanvas(windowWidth, fontSize);
+  cnv.parent("startpage");
+  cnv.id("grayscale-thing")
+
+  background(0); 
   noSmooth();
   frameRate(60);
 } 
 
+
 function draw() {
-  
   noStroke();
   textFont(theFont);
-  //translate((windowWidth/2) - ((lNum*fontSize)/2) - (fontSize*0.6),windowHeight/2);
-  fill(0);
-  //ellipse(mouseX, mouseY,100,100);
-  translate(0,windowHeight/2);
-  background(255,bgA);
-  //rect(0,0,width,height);
+  
+  fill(35);
+  translate(0,fontSize);
+  background(220,bgA);
   
   push();
   sentence();

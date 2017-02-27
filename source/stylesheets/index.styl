@@ -1,21 +1,93 @@
-//@import 'normalize'
-html
-	height 100%
-	#startpage
-		min-height 100%
-		margin 0
-		display flex
-		justify-content center
-		
-		align-items center
+@import 'normalize'
 
-	#content	
-		width 100%
-		.first-section
-			min-height 100%
-			background rgb(100,100,100)
-		.second-section
-			min-height 100%
-			background #456712
-		.third-sec
-			min-height 100%
+
+@font-face
+   font-family square
+   src url(fonts/square.ttf)
+
+@font-face
+   font-family destroyed
+   font-style normal
+   src url(fonts/destroyed.ttf)
+   
+@font-face
+   font-family greyscale
+   font-style normal
+   src url(fonts/grayscale.ttf)
+
+$fontCol = rgb(220,220,220)
+$bgCol = rgb(35,35,35)
+$fontsize = 18pt
+
+
+html
+	text-transform lowercase
+	font-family grayscale
+	margin 0
+	padding 0
+	height 100%
+	font-size $fontsize
+	body
+		background $bgCol
+		margin 0
+		padding 0
+		#head
+			background $fontCol
+			#startpage
+				min-height 25vh
+				display flex
+				justify-content center
+				align-items center
+				
+			#menu
+				display flex
+				width 100%
+				justify-content center
+				align-items center
+				text-align center
+				.menu__list 
+					position relative
+					display -webkit-flex
+					display flex
+					-webkit-flex-wrap flex-wrap
+					flex-wrap wrap
+					margin 0
+					padding 0
+					list-style none
+					.menu__item
+						display block
+						margin 1em 0
+						.menu__link
+							font-size 1.05em
+							font-weight bold
+							display block
+							padding 1em
+							cursor pointer
+							-webkit-user-select none
+							-moz-user-select none
+							-ms-user-select none
+							user-select none
+							-wekit-touch-callout none
+							-khtml-user-select none
+							-webkit-tap-highlight-color rgba(0,0,0,0)
+							
+						.menu__link:hover,
+						.menu__link:focus
+							font-family destroyed
+							outline none
+		#content
+			margin 0 auto
+			padding 5em
+			align-items center
+			text-align justify
+			max-width 50rem
+			#first-section
+				color $fontCol
+				min-height 75vh
+			#second-section
+				color $fontCol
+				min-height 75vh
+			#third-section
+				color $fontCol
+				min-height 75vh
+		// #footer
