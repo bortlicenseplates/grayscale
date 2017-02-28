@@ -199,6 +199,7 @@ textarea {
   src: url("fonts/grayscale.ttf");
 }
 html {
+  overflow: hidden;
   text-transform: lowercase;
   font-family: grayscale;
   margin: 0;
@@ -215,12 +216,13 @@ html body #head {
   background: #dcdcdc;
 }
 html body #head #startpage {
-  min-height: 25vh;
+  min-height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 html body #head #menu {
+  font-size: 1.5em;
   display: flex;
   width: 100%;
   justify-content: center;
@@ -245,7 +247,7 @@ html body #head #menu .menu__list .menu__item .menu__link {
   font-size: 1.05em;
   font-weight: bold;
   display: block;
-  padding: 1em;
+  padding: 0.5em;
   cursor: pointer;
   -webkit-user-select: none;
   -moz-user-select: none;
@@ -257,7 +259,6 @@ html body #head #menu .menu__list .menu__item .menu__link {
 }
 html body #head #menu .menu__list .menu__item .menu__link:hover,
 html body #head #menu .menu__list .menu__item .menu__link:focus {
-  font-family: destroyed;
   outline: none;
 }
 html body #content {
@@ -269,13 +270,20 @@ html body #content {
 }
 html body #content #first-section {
   color: #dcdcdc;
-  min-height: 75vh;
+  min-height: 80vh;
 }
 html body #content #second-section {
   color: #dcdcdc;
-  min-height: 75vh;
+  min-height: 80vh;
 }
 html body #content #third-section {
   color: #dcdcdc;
-  min-height: 75vh;
+  min-height: 80vh;
+}
+html body #footer {
+  background: #888;
+  min-height: 20vh;
+}
+h1 {
+  font-size: 2rem;
 }

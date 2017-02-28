@@ -21,6 +21,7 @@ $fontsize = 18pt
 
 
 html
+	overflow hidden
 	text-transform lowercase
 	font-family grayscale
 	margin 0
@@ -34,12 +35,13 @@ html
 		#head
 			background $fontCol
 			#startpage
-				min-height 25vh
+				min-height 100vh
 				display flex
 				justify-content center
 				align-items center
 				
 			#menu
+				font-size 1.5em
 				display flex
 				width 100%
 				justify-content center
@@ -61,7 +63,7 @@ html
 							font-size 1.05em
 							font-weight bold
 							display block
-							padding 1em
+							padding 0.5em
 							cursor pointer
 							-webkit-user-select none
 							-moz-user-select none
@@ -73,7 +75,6 @@ html
 							
 						.menu__link:hover,
 						.menu__link:focus
-							font-family destroyed
 							outline none
 		#content
 			margin 0 auto
@@ -83,11 +84,17 @@ html
 			max-width 50rem
 			#first-section
 				color $fontCol
-				min-height 75vh
+				min-height 80vh
 			#second-section
 				color $fontCol
-				min-height 75vh
+				min-height 80vh
 			#third-section
 				color $fontCol
-				min-height 75vh
-		// #footer
+				min-height 80vh
+		#footer
+			background #888888
+			min-height 20vh
+			
+h1
+	font-size 2rem
+	
