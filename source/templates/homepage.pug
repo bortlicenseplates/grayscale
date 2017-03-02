@@ -1,44 +1,61 @@
 doctype html
 html(lang = "eng")
     head
+        title GRAYSCALE
+        meta(name='description', content='')
         meta(charset='utf-8')
         meta(http-equiv='X-UA-Compatible', content='IE=edge,chrome=1')
         link(rel='stylesheet', href='css/index.css')
         script(src='js/vendor/p5.dom.js')
         script(src='js/vendor/p5.min.js')
         script(src='js/load.js')
-        title GRAYSCALE
-        meta(name='description', content='')
-        //- meta(name='viewport', content='width=device-width, initial-scale=1')
+        script(src='js/vendor/jquery-1.11.2.min.js')
+        script(src='js/scrollfade.js')
+        //- script(src='js/menuhide.js')
     body
-        #head
-            #startpage
-                #greyscale-thing
+        #fb-root
+                script.
+                  (function(d, s, id) {
+                  var js, fjs = d.getElementsByTagName(s)[0];
+                  if (d.getElementById(id)) return;
+                  js = d.createElement(s); js.id = id;
+                  js.src = "//connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v2.8&appId=1013695032082288";
+                  fjs.parentNode.insertBefore(js, fjs);
+                  }(document, 'script', 'facebook-jssdk'));
 
-            #menu
-                nav.menu
-                    ul.menu__list
-                        li.menu__item
-                            a.menu__link about
-
-                        li.menu__item
-                            a.menu__link visual
-
-                        li.menu__item
-                            a.menu__link aural
-
-                        li.menu__item
-                            a.menu__link events
-
-        #content
-            #first-section
-                h1.
-                    ABOUT
-
-                p.
-                    
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc aliquet lorem ante, vitae convallis lectus vestibulum vel. Aliquam vel mauris augue. Proin quis vehicula nisi, sit amet auctor nisl. Phasellus nec eros et nisi porta euismod. Cras facilisis lectus vitae nisl convallis eleifend. Mauris facilisis a metus eget elementum. Vivamus in leo tincidunt, viverra metus eu, tincidunt nisi. Nunc pretium velit felis, ut ultrices velit eleifend ac.
+        #container
+            #head.nav-down
                 
-            #second-section
-            #third-section
-        #footer
+                #menu
+                    h1.
+                        greyscale
+
+                #startpage
+
+                    #grayscale-container
+
+            #content
+                #section.about
+                    #section-content
+                        h1.
+                            ABOUT
+
+                        p.
+                            
+                            Grayscale is a new series of events that aims to highlight audio-visual art in Ireland. The first event will take place in the Pillar Room, an ornate 18th century function room beneath the Rotunda Hospital in Dublin, on the 11th of March 2017.
+                        p.
+                            #[a(href="https://www.clucluclu.xyz") CLU] is an audio-visual collaboration between Kevin Freeney and Sean Cooley. Based in Dublin, the pair have been working together at home and abroad for the past 5 years. They present an innovative mix of boundary-blurring music and cutting- edge visual performance.
+                        p.
+                            #[a(href="https://soundcloud.com/mrmitchmusic") Mr. Mitch] [#[a(href="http://gobstopper-records.co.uk") Gobstopper]] is a highly respected producer and DJ hailing from London. Over the past 7 years he has been consistently pushing the boundaries of instrumental electronic music, and Boxed, the monthly club night he co-founded in 2012, has become a flashpoint for forward-thinking, open-minded music lovers.
+                        p.
+                            #[a(href="http://www.rachelnoble.com") Rachel Noble] is a freelance visual artist living and working in London, often finding herself involved in the underground music scene.  
+                                                
+                #section.gallery
+                    #vimeo
+                        iframe.vimeo(src='https://player.vimeo.com/video/206395986?color=999&title=0&byline=0', frameborder='0', webkitallowfullscreen='', mozallowfullscreen='', allowfullscreen='')
+                #section.event
+                    iframe.eventbrite(src='//eventbrite.ie/tickets-external?eid=32070865823&ref=etckt', frameborder='0', height='360', width='100%', vspace='0', hspace='0', marginheight='5', marginwidth='5', scrolling='auto', allowtransparency='true')
+
+            #footer
+                .fb-like(data-href='https://www.facebook.com/grayscaledublin/', data-colorscheme='dark', data-layout='button_count', data-action='like', data-size='small', data-show-faces='false', data-share='true')
+

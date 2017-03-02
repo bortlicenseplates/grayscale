@@ -10,18 +10,29 @@ var lNum;
 var count;
 var bgA, bgAM, bgAm;
 var clicked;
-var timeout, timedOut;
+var timeout, timedOut, fade;
+var scrollCheck;
+var fontColor;
+var bgColor;
+var fadeSpeed;
 
 function preload(){
   
   theFont = loadFont("fonts/destroyed.ttf");
-  greyFont = loadFont("fonts/grayscale.ttf");
+  greyFont = loadFont("fonts/Grayscale.ttf");
 
 }
 
 function setup() {
+
+  scrollCheck = false;
   timeout = 0;
   
+  fontColor = color(35,35,35);
+  bgColor = color(220,220,220);
+  fadeSpeed = 0.5;
+  fade = 1;
+
   timedOut = false;
   pad = 5;
   count = 0;
@@ -32,16 +43,13 @@ function setup() {
   bgA = bgAm;
   clicked = false;
   textFont(theFont);
-  //textAlign(CENTER);
   textSize(fontSize);
-  //noLoop();
-  //frameRate(25);
 
   var cnv = createCanvas(windowWidth, fontSize);
-  cnv.parent("startpage");
-  cnv.id("grayscale-thing")
+  cnv.parent("grayscale-container");
+  cnv.id("grayscale-thing");
 
-  background(0); 
+  background(bgColor); 
   noSmooth();
   frameRate(60);
 } 
@@ -51,9 +59,9 @@ function draw() {
   noStroke();
   textFont(theFont);
   
-  fill(35);
+  fill(fontColor);
   translate(0,fontSize);
-  background(220,bgA);
+  background(bgColor,bgA);
   
   push();
   sentence();
@@ -67,12 +75,36 @@ function draw() {
     clicked = true;
     timeout = 0;
   }
-  if(clicked && timeout == 60*4){
+  if(clicked && timeout >= 60*4){
     print("yes");
     timedOut = true;
-    timeout = 0;
+  } if (timedOut){
+    timeout --;
+    clicked = false;
+    if (timeout <= 0){
+      timedOut = false;
+    }
   }
 }
+
+function fadeout(){
+  fade -= 0.01;
+  if(fade > 0){
+    $(function(){
+      $('#grayscale-container').css({ 'opacity' : fade })
+    });
+  } else {
+    $('#grayscale-container').css({ 'display' : 'none' })
+  }
+  
+}
+
+function fadBG(){
+  if(bgColor > fontColor){
+    bgColor -= fadeSpeed;
+  }
+}
+
 
 function timer(maxTime){
   if(!drawWord() && !clicked){
@@ -85,11 +117,6 @@ function timer(maxTime){
 }
 
 function transition(){
-  /*if (clicked && timedOut){
-    if (bgA > bgAm){
-      bgA--;
-    }
-  } else if (clicked){*/
   if (clicked){
     if (bgA < bgAM){
       bgA++;
@@ -196,18 +223,15 @@ function drawWord(){
   
   var t = -fontSize;
   var b = 0;
-  if(mouseY > height/2 + t && mouseY < height/2 +fontSize * 0.25){
-    return true;
-    clicked = true;
-  } else {
+  // if(mouseY > height/2 + t && mouseY < height/2 +fontSize * 0.25){
+  //   return true;
+  // } else {
     return false;
-  }
+  // }
 }
 
 function mousePressed(){
-  if (drawWord()){
+  if(!clicked){
     clicked = true;
-  } else {
-    return false;
   }
 }

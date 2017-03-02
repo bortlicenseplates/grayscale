@@ -1,100 +1,151 @@
 @import 'normalize'
 
-
-@font-face
-   font-family square
-   src url(fonts/square.ttf)
-
 @font-face
    font-family destroyed
    font-style normal
    src url(fonts/destroyed.ttf)
    
 @font-face
-   font-family greyscale
+   font-family Grascale
    font-style normal
-   src url(fonts/grayscale.ttf)
+   src url(fonts/Grayscale.ttf)
+   
+@font-face
+   font-family monosten
+   font-style normal
+   src url('fonts/Monosten-B.ttf') format('ttf')
 
-$fontCol = rgb(220,220,220)
-$bgCol = rgb(35,35,35)
-$fontsize = 18pt
+$headFontCol = rgb(35,35,35)
+$headBGCol = rgb(220,220,220)
 
+
+$1FontCol = rgb(81,81,81)
+$1BGCol = rgb(110,110,110)
+
+$2FontCol = rgb(110,110,110)
+$2BGCol = rgb(81,81,81)
+
+$3FontCol = rgb(220,220,220)
+$3BGCol = rgb(0,0,0)
+
+
+$fontsize = 16pt
+
+
+$menu-size = 2em
 
 html
-	overflow hidden
-	text-transform lowercase
-	font-family grayscale
+	font-family Monosten B
 	margin 0
 	padding 0
 	height 100%
 	font-size $fontsize
 	body
-		background $bgCol
-		margin 0
-		padding 0
-		#head
-			background $fontCol
-			#startpage
-				min-height 100vh
-				display flex
-				justify-content center
-				align-items center
-				
-			#menu
-				font-size 1.5em
-				display flex
-				width 100%
-				justify-content center
-				align-items center
-				text-align center
-				.menu__list 
-					position relative
-					display -webkit-flex
-					display flex
-					-webkit-flex-wrap flex-wrap
-					flex-wrap wrap
-					margin 0
-					padding 0
-					list-style none
-					.menu__item
-						display block
-						margin 1em 0
-						.menu__link
-							font-size 1.05em
-							font-weight bold
-							display block
-							padding 0.5em
-							cursor pointer
-							-webkit-user-select none
-							-moz-user-select none
-							-ms-user-select none
-							user-select none
-							-wekit-touch-callout none
-							-khtml-user-select none
-							-webkit-tap-highlight-color rgba(0,0,0,0)
-							
-						.menu__link:hover,
-						.menu__link:focus
-							outline none
-		#content
-			margin 0 auto
-			padding 5em
-			align-items center
-			text-align justify
-			max-width 50rem
-			#first-section
-				color $fontCol
-				min-height 80vh
-			#second-section
-				color $fontCol
-				min-height 80vh
-			#third-section
-				color $fontCol
-				min-height 80vh
-		#footer
-			background #888888
-			min-height 20vh
+		#container
+			overflow hidden
+			margin 0
+			padding 0
 			
-h1
-	font-size 2rem
-	
+			background $3BGCol
+			#head
+				background rgba(0,0,0,0)
+				#startpage
+					opacity 0.99
+					position static
+					background $3BGCol
+					min-height 100vh
+					display flex
+					#grayscale-container
+						display flex
+						z-index 10
+						justify-content center
+						align-items center
+						background $headBGCol
+						min-height 100vh
+						canvas#grayscale-thing
+							justify-content center
+							align-items center
+				#menu
+					background $3BGCol
+					opacity 0
+					color $headBGCol
+					position fixed
+					display flex
+					width 100%
+					justify-content center
+					align-items center
+					text-align center
+					h1
+						height $fontsize
+						align-items center
+						justify-content center
+						display flex
+						min-width 100%
+						font-family grayscale
+					
+			#content
+				
+				margin 0 auto
+				#section
+					min-height 80vh
+					min-width 100%	
+				.about
+					text-align justify
+					// max-width 50em
+					background $3BGCol
+					color $3FontCol
+					width 100%
+					#section-content
+						font-family Monosten B
+						width 60%
+						align-items center
+						allign-items center
+						
+						margin 0 auto
+						padding 3em 5em 3em 5em
+						p
+							// width 50em
+						h1
+							text-align left
+							font-size 1.5rem
+						a
+							line-height 0.7px
+							text-decoration none
+							color $2FontCol
+							//border 1px solid $2FontCol
+						a:hover
+							color #FFF
+					
+				.gallery
+					width 100vw
+					min-height 100vh
+					background $3BGCol
+					color $3fontCol
+					#vimeo
+						min-height 100vh
+						min-width 100vw
+						iframe.vimeo
+							width 100%
+							height 100vh
+							
+					// #picture
+					// 	.one 
+				.event
+					display flex
+					align-items center
+					justify-content center
+					height 100vh
+					width 100vw
+					background $3BGCol
+					color $3fontCol
+					display inline-block
+					iframe.eventbrite
+						top 25%
+						align-items center
+						justify-content center
+						position relative
+			#footer
+				padding $fontsize
+				background $3BGCol
+				display flex
+				align-items top
