@@ -56,12 +56,12 @@ function initialise(){
   timedOut = false;
   count = 0;
   bgAM = 255;
-  bgAm = 2;
+  bgAm = 10;
   bgA = bgAm;
   clicked = false;
   //colour stuff
   fontColor = color(35,35,35);
-  bgColor = color(220,220,220);
+  bgColor = 220;
 
   //transition stuff
   fadeSpeed = 0.5;
@@ -76,12 +76,12 @@ function setup() {
   //FONT STUFF
   fontSize = 72;
   
-  if (13 * fontSize > windowWidth){ //13 is largest string in words[]
-    fontSize = windowWidth / 13;
+  if (15 * fontSize > windowWidth){ //15 is largest string in words[] + 2
+    fontSize = windowWidth / 15;
   }
   
   padFinder();  
-  fontSize = Math.ceil(windowWidth/lNum);
+  fontSize = (windowWidth/lNum);
   textFont(theFont);
   textSize(fontSize);
 
@@ -113,9 +113,8 @@ function draw() {
   textFont(theFont);
   
   fill(fontColor);
-  translate(0,(windowHeight/2) + (fontSize/2));
-  background(255,bgA);
-  //print(bgA);
+  translate(fontSize * 0.03,(windowHeight/2) + (fontSize/2));
+  background(bgColor,bgA);
   
   push();
   sentence();
