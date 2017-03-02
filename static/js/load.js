@@ -77,7 +77,7 @@ function setup() {
   fontSize = 72;
   
   if (13 * fontSize > windowWidth){ //13 is largest string in words[]
-    fontSize = 13 / windowWidth;
+    fontSize = windowWidth / 13;
   }
   
   padFinder();  
@@ -88,13 +88,14 @@ function setup() {
   //END FONT STUFF
 
   //canvas start -- DONT TOUCH
-  var cnv = createCanvas(windowWidth, fontSize);
+  var cnv = createCanvas(windowWidth, windowHeight);
   cnv.parent("grayscale-container");
   cnv.id("grayscale-thing");
-  background(bgColor); 
+  background(0); 
   noSmooth();
-  frameRate(60);
+  frameRate(30);
   //canvas end
+  $('#menu').css({ 'font-size' : fontSize/2 });
 } 
 
 //calculates number of pad letters and total length of string
@@ -112,8 +113,8 @@ function draw() {
   textFont(theFont);
   
   fill(fontColor);
-  translate(0,fontSize);
-  background(bgColor,bgA);
+  translate(0,(windowHeight/2) + (fontSize/2));
+  background(255,bgA);
   //print(bgA);
   
   push();

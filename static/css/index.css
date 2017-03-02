@@ -227,7 +227,7 @@ html body #container #head #startpage #grayscale-container {
   z-index: 10;
   justify-content: center;
   align-items: center;
-  background: #dcdcdc;
+  background: #fff;
   min-height: 100vh;
 }
 html body #container #head #startpage #grayscale-container canvas#grayscale-thing {
@@ -237,7 +237,7 @@ html body #container #head #startpage #grayscale-container canvas#grayscale-thin
 html body #container #head #menu {
   background: #000;
   opacity: 0;
-  color: #dcdcdc;
+  color: #fff;
   position: fixed;
   display: flex;
   width: 100%;
@@ -261,18 +261,18 @@ html body #container #content #section {
   min-width: 100%;
 }
 html body #container #content .about {
-  text-align: justify;
+  text-align: left;
   background: #000;
   color: #dcdcdc;
   width: 100%;
 }
 html body #container #content .about #section-content {
   font-family: Monosten B;
-  width: 60%;
+  max-width: 30em;
   align-items: center;
   allign-items: center;
   margin: 0 auto;
-  padding: 3em 5em 3em 5em;
+  padding: 3em 1em 3em 1em;
 }
 html body #container #content .about #section-content h1 {
   text-align: left;
