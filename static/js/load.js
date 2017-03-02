@@ -1,58 +1,110 @@
+//fonts
 var theFont;
 var greyFont;
+
+// jumble chars
 var sChars = "ab";
 var vChars = "cdefghijkl";
 var hChars = "mnopqr";
-var word = "grayscale";
+
+//words to cycle through
+var words = [
+              "grayscale",
+              "clu",
+              "mr. mitch",
+              "rachel  nobel",
+              "11 mar 17"
+            ];
+//current word in array
+var wnum;
+//the word being read
+var word;
+//font stuff
 var pad;
 var fontSize;
 var lNum;
+
+// check stuff
 var count;
-var bgA, bgAM, bgAm;
 var clicked;
 var timeout, timedOut, fade;
 var scrollCheck;
+var fadeSpeed;
+var wordSwitch;
+
+//colour stuff
+var bgA, bgAM, bgAm;
 var fontColor;
 var bgColor;
-var fadeSpeed;
 
+
+//load fonts here
 function preload(){
   
   theFont = loadFont("fonts/destroyed.ttf");
   greyFont = loadFont("fonts/Grayscale.ttf");
 
 }
-
-function setup() {
+//setup stuff
+function initialise(){
+  wnum = 0;
+  word = words[wnum];
+  wordSwitch = false;
 
   scrollCheck = false;
   timeout = 0;
-  
-  fontColor = color(35,35,35);
-  bgColor = color(220,220,220);
-  fadeSpeed = 0.5;
-  fade = 1;
-
   timedOut = false;
-  pad = 5;
   count = 0;
-  lNum = word.length + (pad*2);
-  fontSize = Math.ceil(windowWidth/lNum);
   bgAM = 255;
-  bgAm = 10;
+  bgAm = 2;
   bgA = bgAm;
   clicked = false;
+  //colour stuff
+  fontColor = color(35,35,35);
+  bgColor = color(220,220,220);
+
+  //transition stuff
+  fadeSpeed = 0.5;
+  fade = 1;
+}
+
+function setup() {
+  //standard setup stuff
+  initialise();
+  //end
+
+  //FONT STUFF
+  fontSize = 72;
+  
+  if (13 * fontSize > windowWidth){ //13 is largest string in words[]
+    fontSize = 13 / windowWidth;
+  }
+  
+  padFinder();  
+  fontSize = Math.ceil(windowWidth/lNum);
   textFont(theFont);
   textSize(fontSize);
 
+  //END FONT STUFF
+
+  //canvas start -- DONT TOUCH
   var cnv = createCanvas(windowWidth, fontSize);
   cnv.parent("grayscale-container");
   cnv.id("grayscale-thing");
-
   background(bgColor); 
   noSmooth();
   frameRate(60);
+  //canvas end
 } 
+
+//calculates number of pad letters and total length of string
+function padFinder(){
+  var ww = (word.length) * fontSize;
+  pad = Math.floor((windowWidth - ww) / fontSize) / 2;
+
+  lNum = word.length + (pad*2);
+
+}
 
 
 function draw() {
@@ -62,6 +114,7 @@ function draw() {
   fill(fontColor);
   translate(0,fontSize);
   background(bgColor,bgA);
+  //print(bgA);
   
   push();
   sentence();
@@ -70,49 +123,44 @@ function draw() {
   
   
   transition();
-  timer(60*4);
-  if(!clicked && timeout == 60*4){
+  timer(60*8);
+  if(!clicked && timeout == 60*8){
+    if (wordSwitch){
+      changeWord();
+    }
+    
+    print("Step 1");
     clicked = true;
     timeout = 0;
   }
-  if(clicked && timeout >= 60*4){
-    print("yes");
+  else if(clicked && timeout >= 60*4){
+    print("step 2");
+    timeout = 0;
     timedOut = true;
-  } if (timedOut){
+  } else if (timedOut){
     timeout --;
-    clicked = false;
     if (timeout <= 0){
+      print("step 3");
+      clicked = false;
       timedOut = false;
+      timeout = 0;
+      wordSwitch = true;
     }
   }
 }
 
-function fadeout(){
-  fade -= 0.01;
-  if(fade > 0){
-    $(function(){
-      $('#grayscale-container').css({ 'opacity' : fade })
-    });
-  } else {
-    $('#grayscale-container').css({ 'display' : 'none' })
-  }
+function changeWord(){
+  wnum ++;
+  word = words[wnum%(words.length)];
   
-}
-
-function fadBG(){
-  if(bgColor > fontColor){
-    bgColor -= fadeSpeed;
-  }
+  padFinder();
+  wordSwitch = false;
 }
 
 
 function timer(maxTime){
-  if(!drawWord() && !clicked){
+  if(!timedOut){
     timeout++;
-  } else if (clicked && !timedOut) { 
-    timeout ++;
-  } else {
-    timeout = 0;
   }
 }
 
@@ -123,39 +171,34 @@ function transition(){
     }
     return true;
   } else { 
-    alphaSet();
+    if (bgA > bgAm){
+      bgA--;
+    }
     return false;
   }
 }
-function alphaSet(){
-  if(drawWord() && bgA < bgAM){
-    bgA++;
-  } else if(bgA > bgAm) {
-    bgA-=3;
-  }
-  
-}
 
 function counter(){
-  if(count < 255 && (drawWord() || clicked)){
+  if(count < 255 && (clicked)){
     count++;
-  } else if (count > 0 && !drawWord() && !clicked) {
+  } else if (!timedOut && !clicked && count > 0) {
     count --;
   }
-  if (timedOut && count > 0){
+  if (timedOut && clicked && count > 0){
     count --;
+  } else if (timedOut && !clicked && count < 255){
+    count ++;
   }
+
 }
 function sentence(){
   push();
-  var n = (random(5,24));
-  for(var i = 0; i < lNum; i++){
-    
+  for(var i = 0; i < lNum+1; i++){
     if(i >= pad && i < lNum-pad){
       push();
       gScale(pad,i-pad,count);
       pop();
-    } else if (!clicked){
+    } else if (bgA < bgAM){
       hLetter(6,5);
       vLetter(10,6);
     }
@@ -170,7 +213,7 @@ function gScale(skip, n, fade){
   if(!timedOut){
     rnum = random(fade,255);
   } else {
-    rnum = random(count, 255);
+    rnum = random(fade, 255);
   }
   if(fade >= rnum/2){
     textFont(greyFont);
@@ -185,18 +228,19 @@ function gScale(skip, n, fade){
 }
 
 function hLetter(lnum, chance){
+  var p;
   var swtch = Math.round(random(bgAm,bgA));
   if(swtch <=  bgAm+15){
     var c = Math.round(random(0,chance));
     if (c == chance){
       for(var i = 0; i < lnum; i++){
-        var p = Math.round(random(0,hChars.length+3));
+        p = Math.round(random(0,hChars.length+3));
         if(!(p > hChars.length-1)){
           text(hChars.charAt(p),0,0);
         }
       }
     } else if (c >= chance*0.75){
-      var p = Math.round(random(0,sChars.length+4));
+      p = Math.round(random(0,sChars.length+4));
       if(!(p > sChars.length-1)){
         text(sChars.charAt(p),0,0);
       }
@@ -216,22 +260,5 @@ function vLetter(lnum, chance){
         }
       }
     }
-  }
-}
-
-function drawWord(){
-  
-  var t = -fontSize;
-  var b = 0;
-  // if(mouseY > height/2 + t && mouseY < height/2 +fontSize * 0.25){
-  //   return true;
-  // } else {
-    return false;
-  // }
-}
-
-function mousePressed(){
-  if(!clicked){
-    clicked = true;
   }
 }
