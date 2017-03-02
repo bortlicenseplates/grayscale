@@ -318,7 +318,7 @@ html body #container #content .event iframe.eventbrite {
 }
 html body #container #footer {
   padding: 0 1em 0 1em;
-  background: #515151;
+  background: #000;
   display: flex;
   min-width: 100%;
 }
