@@ -190,9 +190,9 @@ textarea {
   src: url("fonts/destroyed.ttf");
 }
 @font-face {
-  font-family: Grascale;
+  font-family: grayscale;
   font-style: normal;
-  src: url("fonts/Grayscale.ttf");
+  src: url("fonts/Grayscale.ttf") format('ttf');
 }
 @font-face {
   font-family: monosten;
@@ -227,17 +227,20 @@ html body #container #head #startpage #grayscale-container {
   z-index: 10;
   justify-content: center;
   align-items: center;
-  background: #fff;
+  background: #dcdcdc;
   min-height: 100vh;
 }
-html body #container #head #startpage #grayscale-container canvas#grayscale-thing {
+html body #container #head #startpage #grayscale-container iframe {
+  height: 100vh;
+  width: 100vw;
   justify-content: center;
   align-items: center;
+  border: none;
 }
 html body #container #head #menu {
   background: #000;
   opacity: 0;
-  color: #fff;
+  color: #dcdcdc;
   position: fixed;
   display: flex;
   width: 100%;

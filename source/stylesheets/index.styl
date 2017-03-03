@@ -3,12 +3,12 @@
 @font-face
    font-family destroyed
    font-style normal
-   src url(fonts/destroyed.ttf)
+   src url('fonts/destroyed.ttf')
    
 @font-face
-   font-family Grascale
+   font-family grayscale
    font-style normal
-   src url(fonts/Grayscale.ttf)
+   src url('fonts/Grayscale.ttf') format('ttf')
    
 @font-face
    font-family monosten
@@ -16,7 +16,7 @@
    src url('fonts/Monosten-B.ttf') format('ttf')
 
 $headFontCol = rgb(35,35,35)
-$headBGCol = rgb(255,255,255)
+$headBGCol = rgb(220,220,220)
 
 
 $1FontCol = rgb(81,81,81)
@@ -33,6 +33,9 @@ $fontsize = 16pt
 
 
 $menu-size = 2em
+
+
+
 
 html
 	font-family Monosten B
@@ -62,9 +65,13 @@ html
 						align-items center
 						background $headBGCol
 						min-height 100vh
-						canvas#grayscale-thing
+						iframe
+							height 100vh
+							width 100vw
 							justify-content center
 							align-items center
+							border none
+							
 				#menu
 					background $3BGCol
 					opacity 0
