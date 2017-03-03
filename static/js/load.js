@@ -42,7 +42,7 @@ var bgColor;
 function preload(){
   
   theFont = loadFont("fonts/destroyed.ttf");
-  greyFont = loadFont("fonts/Grayscale.ttf");
+  greyFont = loadFont("fonts/grayscale.ttf");
 
 }
 //setup stuff
