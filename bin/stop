@@ -1,0 +1,2 @@
+#!/bin/sh
+/usr/bin/pkill -f /home/grayscaleirl/webapps/grayscale/bin/node && rm -f /home/grayscaleirl/webapps/grayscale/run/node.pid

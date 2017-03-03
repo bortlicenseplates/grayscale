@@ -1,0 +1,5 @@
+#!/bin/sh
+/sbin/pidof /home/grayscaleirl/webapps/grayscale/bin/node > /dev/null 2>&1 && exit 0
+mkdir -p /home/grayscaleirl/webapps/grayscale/run
+nohup /home/grayscaleirl/webapps/grayscale/bin/node /home/grayscaleirl/webapps/grayscale/hello-world.js > /dev/null 2>&1 &
+/sbin/pidof /home/grayscaleirl/webapps/grayscale/bin/node > /home/grayscaleirl/webapps/grayscale/run/node.pid
