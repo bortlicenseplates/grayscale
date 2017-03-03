@@ -192,7 +192,7 @@ textarea {
 @font-face {
   font-family: grayscale;
   font-style: normal;
-  src: url("fonts/Grayscale.ttf") format('ttf');
+  src: url("fonts/grayscale.ttf");
 }
 @font-face {
   font-family: monosten;
@@ -301,7 +301,7 @@ html body #container #content .gallery #vimeo {
 }
 html body #container #content .gallery #vimeo iframe.vimeo {
   width: 100%;
-  height: 100vh;
+  height: 57vw;
 }
 html body #container #content .event {
   display: flex;
