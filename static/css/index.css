@@ -185,19 +185,13 @@ textarea {
   font: inherit;
 }
 @font-face {
-  font-family: destroyed;
-  font-style: normal;
-  src: url("fonts/destroyed.ttf");
-}
-@font-face {
   font-family: grayscale;
-  font-style: normal;
-  src: url("fonts/grayscale.ttf");
+  src: url("../fonts/Grayscale.ttf");
 }
 @font-face {
   font-family: monosten;
   font-style: normal;
-  src: url("fonts/Monosten-B.ttf") format('ttf');
+  src: url("../fonts/Monosten-B.ttf") format('ttf');
 }
 html {
   font-family: Monosten B;
