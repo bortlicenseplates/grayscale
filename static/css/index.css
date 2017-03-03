@@ -1,204 +1,17 @@
-html {
-  font-family: sans-serif;
-  -ms-text-size-adjust: 100%;
-  -webkit-text-size-adjust: 100%;
-}
-body {
-  margin: 0;
-}
-article,
-aside,
-details,
-figcaption,
-figure,
-footer,
-header,
-main,
-menu,
-nav,
-section,
-summary {
-  display: block;
-}
-audio,
-canvas,
-progress,
-video {
-  display: inline-block;
-}
-audio:not([controls]) {
-  display: none;
-  height: 0;
-}
-progress {
-  vertical-align: baseline;
-}
-template,
-[hidden] {
-  display: none;
-}
-a {
-  background-color: transparent;
-  -webkit-text-decoration-skip: objects;
-}
-a:active,
-a:hover {
-  outline-width: 0;
-}
-abbr[title] {
-  border-bottom: none;
-  text-decoration: underline;
-  text-decoration: underline dotted;
-}
-b,
-strong {
-  font-weight: inherit;
-}
-b,
-strong {
-  font-weight: bolder;
-}
-dfn {
-  font-style: italic;
-}
-h1 {
-  font-size: 2em;
-  margin: 0.67em 0;
-}
-mark {
-  background-color: #ff0;
-  color: #000;
-}
-small {
-  font-size: 80%;
-}
-sub,
-sup {
-  font-size: 75%;
-  line-height: 0;
-  position: relative;
-  vertical-align: baseline;
-}
-sub {
-  bottom: -0.25em;
-}
-sup {
-  top: -0.5em;
-}
-img {
-  border-style: none;
-}
-svg:not(:root) {
-  overflow: hidden;
-}
-code,
-kbd,
-pre,
-samp {
-  font-family: monospace, monospace;
-  font-size: 1em;
-}
-figure {
-  margin: 1em 40px;
-}
-hr {
-  box-sizing: content-box;
-  height: 0;
-  overflow: visible;
-}
-button,
-input,
-select,
-textarea {
-  font: inherit;
-  margin: 0;
-}
-optgroup {
-  font-weight: bold;
-}
-button,
-input {
-  overflow: visible;
-}
-button,
-select {
-  text-transform: none;
-}
-button,
-html [type="button"],
-[type="reset"],
-[type="submit"] {
-  -webkit-appearance: button;
-}
-button::-moz-focus-inner,
-[type="button"]::-moz-focus-inner,
-[type="reset"]::-moz-focus-inner,
-[type="submit"]::-moz-focus-inner {
-  border-style: none;
-  padding: 0;
-}
-button:-moz-focusring,
-[type="button"]:-moz-focusring,
-[type="reset"]:-moz-focusring,
-[type="submit"]:-moz-focusring {
-  outline: 1px dotted ButtonText;
-}
-fieldset {
-  border: 1px solid #c0c0c0;
-  margin: 0 2px;
-  padding: 0.35em 0.625em 0.75em;
-}
-legend {
-  box-sizing: border-box;
-  color: inherit;
-  display: table;
-  max-width: 100%;
-  padding: 0;
-  white-space: normal;
-}
-textarea {
-  overflow: auto;
-}
-[type="checkbox"],
-[type="radio"] {
-  box-sizing: border-box;
-  padding: 0;
-}
-[type="number"]::-webkit-inner-spin-button,
-[type="number"]::-webkit-outer-spin-button {
-  height: auto;
-}
-[type="search"] {
-  -webkit-appearance: textfield;
-  outline-offset: -2px;
-}
-[type="search"]::-webkit-search-cancel-button,
-[type="search"]::-webkit-search-decoration {
-  -webkit-appearance: none;
-}
-::-webkit-input-placeholder {
-  color: inherit;
-  opacity: 0.54;
-}
-::-webkit-file-upload-button {
-  -webkit-appearance: button;
-  font: inherit;
-}
+@import url("vendor/normalize.css");
+
 @font-face {
-  font-family: destroyed;
+  font-family: grayscale;
   font-style: normal;
-  src: url("fonts/destroyed.ttf");
+  src: url("../fonts/grayscale.ttf");
 }
-@font-face {
-  font-family: Grascale;
-  font-style: normal;
-  src: url("fonts/Grayscale.ttf");
-}
+
 @font-face {
   font-family: monosten;
   font-style: normal;
-  src: url("fonts/Monosten-B.ttf") format('ttf');
+  src: url("../fonts/Monosten-B.ttf") format('ttf');
 }
+
 html {
   font-family: Monosten B;
   margin: 0;
@@ -206,15 +19,18 @@ html {
   height: 100%;
   font-size: 16pt;
 }
+
 html body #container {
   overflow: hidden;
   margin: 0;
   padding: 0;
   background: #000;
 }
+
 html body #container #head {
   background: rgba(0,0,0,0);
 }
+
 html body #container #head #startpage {
   opacity: 0.99;
   position: static;
@@ -222,6 +38,7 @@ html body #container #head #startpage {
   min-height: 100vh;
   display: flex;
 }
+
 html body #container #head #startpage #grayscale-container {
   display: flex;
   z-index: 10;
@@ -229,11 +46,16 @@ html body #container #head #startpage #grayscale-container {
   align-items: center;
   background: #fff;
   min-height: 100vh;
+  min-width: 100vw;
 }
-html body #container #head #startpage #grayscale-container canvas#grayscale-thing {
+
+html body #container #head #startpage #grayscale-container iframe {
   justify-content: center;
   align-items: center;
+  width: 100%;
+  height: 100%;
 }
+
 html body #container #head #menu {
   background: #000;
   opacity: 0;
@@ -245,6 +67,7 @@ html body #container #head #menu {
   align-items: center;
   text-align: center;
 }
+
 html body #container #head #menu h1 {
   height: 16pt;
   align-items: center;
@@ -253,19 +76,23 @@ html body #container #head #menu h1 {
   min-width: 100%;
   font-family: grayscale;
 }
+
 html body #container #content {
   margin: 0 auto;
 }
+
 html body #container #content #section {
   min-height: 80vh;
   min-width: 100%;
 }
+
 html body #container #content .about {
   text-align: left;
   background: #000;
   color: #dcdcdc;
   width: 100%;
 }
+
 html body #container #content .about #section-content {
   font-family: Monosten B;
   max-width: 30em;
@@ -274,32 +101,39 @@ html body #container #content .about #section-content {
   margin: 0 auto;
   padding: 3em 1em 3em 1em;
 }
+
 html body #container #content .about #section-content h1 {
   text-align: left;
   font-size: 1.5rem;
 }
+
 html body #container #content .about #section-content a {
   line-height: 0.7px;
   text-decoration: none;
   color: #6e6e6e;
 }
+
 html body #container #content .about #section-content a:hover {
   color: #fff;
 }
+
 html body #container #content .gallery {
   width: 100vw;
   min-height: 100vh;
   background: #000;
   color: $3fontCol;
 }
+
 html body #container #content .gallery #vimeo {
   min-height: 100vh;
   min-width: 100vw;
 }
+
 html body #container #content .gallery #vimeo iframe.vimeo {
   width: 100%;
   height: 100vh;
 }
+
 html body #container #content .event {
   display: flex;
   align-items: center;
@@ -310,24 +144,28 @@ html body #container #content .event {
   color: $3F ontCol;
   display: inline-block;
 }
+
 html body #container #content .event iframe.eventbrite {
   top: 25%;
   align-items: center;
   justify-content: center;
   position: relative;
 }
+
 html body #container #footer {
   padding: 0 1em 0 1em;
   background: #000;
   display: flex;
   min-width: 100%;
 }
+
 html body #container #footer a.me {
   text-decoration: none;
   float: left;
   padding: 1em;
   color: #dcdcdc;
 }
+
 html body #container #footer .fb-like {
   display: relative;
   float: right;
