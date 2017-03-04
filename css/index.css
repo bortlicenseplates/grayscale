@@ -24,17 +24,17 @@ html body #container {
   overflow: hidden;
   margin: 0;
   padding: 0;
-  background: #000;
+  background: #fff;
 }
 
 html body #container #head {
-  background: rgba(0,0,0,0);
+  background: rgba(255,255,255,0);
 }
 
 html body #container #head #startpage {
   opacity: 0.99;
   position: static;
-  background: #000;
+  background: #fff;
   min-height: 100vh;
   display: flex;
 }
@@ -57,9 +57,9 @@ html body #container #head #startpage #grayscale-container iframe {
 }
 
 html body #container #head #menu {
-  background: #000;
+  background: #fff;
   opacity: 0;
-  color: #fff;
+  color: rgb(35,35,35);
   position: fixed;
   display: flex;
   width: 100%;
@@ -78,6 +78,8 @@ html body #container #head #menu h1 {
 }
 
 html body #container #content {
+  
+  max-width: 1080px;
   margin: 0 auto;
 }
 
@@ -88,8 +90,8 @@ html body #container #content #section {
 
 html body #container #content .about {
   text-align: left;
-  background: #000;
-  color: #dcdcdc;
+  background: #fff;
+  color: rgb(35,35,35);
   width: 100%;
 }
 
@@ -110,18 +112,18 @@ html body #container #content .about #section-content h1 {
 html body #container #content .about #section-content a {
   line-height: 0.7px;
   text-decoration: none;
-  color: #6e6e6e;
+  color: #666;
 }
 
 html body #container #content .about #section-content a:hover {
-  color: #fff;
+  color: #999;
 }
 
 html body #container #content .gallery {
   width: 100vw;
   min-height: 100vh;
-  background: #000;
-  color: $3fontCol;
+  background: #fff;
+  color: rgb(35,35,35);
 }
 
 html body #container #content .gallery #vimeo {
@@ -140,8 +142,8 @@ html body #container #content .event {
   justify-content: center;
   height: 100vh;
   width: 100vw;
-  background: #000;
-  color: $3F ontCol;
+  background: #fff;
+  color: rgb(35,35,35);
   display: inline-block;
 }
 
@@ -154,7 +156,7 @@ html body #container #content .event iframe.eventbrite {
 
 html body #container #footer {
   padding: 0 1em 0 1em;
-  background: #000;
+  background: #fff;
   display: flex;
   min-width: 100%;
 }
