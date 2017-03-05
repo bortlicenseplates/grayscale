@@ -23,7 +23,6 @@ html {
   background: #fff;
   font-size: 24pt;
 }
-@media(min-width:60em){html{font-size: 18pt}}
 
 body {
   background: #fff;
