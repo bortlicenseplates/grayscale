@@ -1,8 +1,5 @@
 @import url("vendor/normalize.css");
 
-
-
-
 @font-face {
   font-family: grayscale;
   font-style: normal;
@@ -23,6 +20,15 @@ html {
   background: #fff;
   font-size: 18pt;
 }
+
+@media(max-width:60em){html{font-size: 90%}}
+
+/*
+
+  SAFE BELOW HERE
+
+*/
+
 
 body {
   background: #fff;
@@ -91,7 +97,7 @@ body {
 
 #container #head #menu h1 {
   padding: 0 1em 0 1em;
-  font-size: 250%;
+  font-size: 6vw;
   height: 16pt;
   align-items: center;
   justify-content: center;
