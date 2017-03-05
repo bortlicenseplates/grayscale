@@ -18,7 +18,7 @@ html {
   margin: 0;
   padding: 0;
   height: 100%;
-  font-size: 16pt;
+  background: #fff;
 }
 
 html body #container {
@@ -26,6 +26,7 @@ html body #container {
   margin: 0;
   padding: 0;
   background: #fff;
+
 }
 
 html body #container #head {
@@ -40,6 +41,14 @@ html body #container #head #startpage {
   display: flex;
 }
 
+html body #container #head #startpage #hide-thing {
+  z-index: 20;
+  position: absolute;
+  background: #fff;
+  height: 35%;
+  min-width: 100%;
+}
+
 html body #container #head #startpage #grayscale-container {
   display: flex;
   z-index: 10;
@@ -50,13 +59,7 @@ html body #container #head #startpage #grayscale-container {
   min-width: 100vw;
 }
 
-html body #container #head #startpage #hide-thing {
-  z-index: 20;
-  position: absolute;
-  background: white;
-  height: 35%;
-  min-width: 100%;
-}
+
 
 html body #container #head #startpage #grayscale-container iframe {
   justify-content: center;
@@ -80,6 +83,7 @@ html body #container #head #menu {
 }
 
 html body #container #head #menu h1 {
+  font-size: 4rem;
   height: 16pt;
   align-items: center;
   justify-content: center;
@@ -114,7 +118,7 @@ html body #container #content .about #section-content {
   align-items: center;
   align-items: center;
   margin: 0 auto;
-  padding: 3em 1em 3em 1em;
+  padding: 0 1em 0 1em;
 }
 
 html body #container #content .about #section-content h1 {
@@ -133,7 +137,6 @@ html body #container #content .about #section-content a:hover {
 
 html body #container #content .gallery {
   /*padding-top: 5em;*/
-  padding-bottom: 2em;
   width: 100%;
   height: 100%;
   background: #fff;
@@ -188,7 +191,7 @@ html body #container #content .event iframe.eventbrite {
   color: #000;
 }
 #footer .fb-like {
-  /*display: relative;*/
+  display: relative;
   float: right;
-  /*padding: 1em 1em;*/
+  padding: 1em 1em;
 }
