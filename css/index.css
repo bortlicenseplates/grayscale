@@ -1,5 +1,4 @@
 @import url("vendor/normalize.css");
-@media(min-width:60em){html{font-size: 100%}}
 
 @font-face {
   font-family: grayscale;
@@ -19,21 +18,21 @@ html {
   padding: 0;
   height: 100%;
   background: #fff;
+  font-size: 24pt;
 }
 
-html body #container {
-  /*overflow: hidden;*/
+#container {
   margin: 0;
   padding: 0;
   background: #fff;
 
 }
 
-html body #container #head {
+#container #head {
   background: rgba(255,255,255,0);
 }
 
-html body #container #head #startpage {
+#container #head #startpage {
   opacity: 0.99;
   position: static;
   background: #fff;
@@ -41,7 +40,7 @@ html body #container #head #startpage {
   display: flex;
 }
 
-html body #container #head #startpage #hide-thing {
+#container #head #startpage #hide-thing {
   z-index: 20;
   position: absolute;
   background: #fff;
@@ -49,27 +48,28 @@ html body #container #head #startpage #hide-thing {
   min-width: 100%;
 }
 
-html body #container #head #startpage #grayscale-container {
+#container #head #startpage #grayscale-container {
   display: flex;
   z-index: 10;
   justify-content: center;
   align-items: center;
   background: #fff;
-  min-height: 100vh;
-  min-width: 100vw;
+  min-height: 100%;
+  width: 100%;
 }
 
 
 
-html body #container #head #startpage #grayscale-container iframe {
+#container #head #startpage #grayscale-container iframe {
   justify-content: center;
   align-items: center;
   width: 100%;
   height: 100%;
   border: none;
+  background: #fff;
 }
 
-html body #container #head #menu {
+#container #head #menu {
   background: #fff;
   opacity: 0;
   color: rgb(35,35,35);
@@ -82,8 +82,9 @@ html body #container #head #menu {
   z-index: 20;
 }
 
-html body #container #head #menu h1 {
-  font-size: 4rem;
+#container #head #menu h1 {
+  padding: 0 1em 0 1em;
+  font-size: 250%;
   height: 16pt;
   align-items: center;
   justify-content: center;
@@ -92,18 +93,18 @@ html body #container #head #menu h1 {
   font-family: grayscale;
 }
 
-html body #container #content {
-  
+#container #content {
+  padding: 0 1em 0 1em;
   max-width: 1080px;
   margin: 0 auto;
 }
 
-html body #container #content #section {
+#container #content #section {
   /*min-height: 80vh;*/
   width: 100%;
 }
 
-html body #container #content .about {
+#container #content .about {
   margin-top: 5em;
   margin-bottom: 2em;
   text-align: left;
@@ -112,30 +113,29 @@ html body #container #content .about {
   width: 100%;
 }
 
-html body #container #content .about #section-content {
+#container #content .about #section-content {
   /*max-width: 30em;*/
   /*text-align: justify;*/
   align-items: center;
   align-items: center;
   margin: 0 auto;
-  padding: 0 1em 0 1em;
 }
 
-html body #container #content .about #section-content h1 {
+#container #content .about #section-content h1 {
   font-size: 1.5rem;
 }
 
-html body #container #content .about #section-content a {
+#container #content .about #section-content a {
   line-height: 0.7px;
   text-decoration: none;
   color: #666;
 }
 
-html body #container #content .about #section-content a:hover {
+#container #content .about #section-content a:hover {
   color: #999;
 }
 
-html body #container #content .gallery {
+#container #content .gallery {
   /*padding-top: 5em;*/
   width: 100%;
   height: 100%;
@@ -143,14 +143,14 @@ html body #container #content .gallery {
   color: rgb(35,35,35);
 }
 
-html body #container #content .gallery #vimeo {
+#container #content .gallery #vimeo {
   position: relative;
   padding-bottom: 56.25%; /* 16:9 */
   padding-top: 25px;
   height: 0;
 }
 
-html body #container #content .gallery #vimeo iframe.vimeo {
+#container #content .gallery #vimeo iframe.vimeo {
   position: absolute;
   top: 0;
   left: 0;
@@ -158,7 +158,7 @@ html body #container #content .gallery #vimeo iframe.vimeo {
   height: 100%;
 }
 
-html body #container #content .event {
+#container #content .event {
   padding-top: 2em;
   padding-bottom: 2em;
   display: flex;
@@ -171,27 +171,25 @@ html body #container #content .event {
   display: inline-block;
 }
 
-html body #container #content .event iframe.eventbrite {
+#container #content .event iframe.eventbrite {
   top: 25%;
   align-items: center;
   justify-content: center;
   position: relative;
 }
 
-#container #footer {
+#footer {
   background: #fff;
-  display: flex;
+  display: relative;
   width: 100%;
 }
 
 .me{
   text-decoration: none;
-  /*float: left;*/
-  padding: 1em;
+  float: left;
   color: #000;
 }
 #footer .fb-like {
   display: relative;
   float: right;
-  padding: 1em 1em;
 }
