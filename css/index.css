@@ -196,13 +196,11 @@ body {
 }
 
 .me{
-  width: 50%;
   text-decoration: none;
   float: left;
   color: #000;
 }
 #footer .fb-like {
-  width: 50%;
   display: relative;
   float: right;
 }
