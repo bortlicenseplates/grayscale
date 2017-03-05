@@ -80,16 +80,16 @@ function setup() {
     fontSize = windowWidth / 15;
   }
   
-  padFinder();  
+  padFinder();
+  lNum = word.length + (pad*2);
   fontSize = (windowWidth/lNum);
   textFont(theFont);
   textSize(fontSize);
-
   //END FONT STUFF
 
   //canvas start -- DONT TOUCH
   var cnv = createCanvas(windowWidth, windowHeight);
-  cnv.parent("grayscale-container");
+  cnv.parent("#grayscale-container");
   cnv.id("grayscale-thing");
   background(0); 
   noSmooth();
@@ -103,7 +103,6 @@ function padFinder(){
   var ww = (word.length) * fontSize;
   pad = Math.floor((windowWidth - ww) / fontSize) / 2;
 
-  lNum = word.length + (pad*2);
 
 }
 
