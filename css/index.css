@@ -1,6 +1,6 @@
 @import url("vendor/normalize.css");
 
-html{font-size:110%;}
+html{font-size:110%; background: #fff;}
 @media(min-width:60em){html{font-size: 90%}}
 
 
@@ -23,6 +23,10 @@ html {
   height: 100%;
   background: #fff;
   font-size: 18pt;
+}
+
+body {
+  background: #fff;
 }
 
 #container {
