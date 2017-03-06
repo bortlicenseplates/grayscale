@@ -1,0 +1,44 @@
+    /* GRAYSCALE WEB TEAM */
+
+
+    Web: James Ryan.                        
+    GitHub: https://www.gihub.com/twinpixels                      
+    Twitter: @werbderv                      
+    Location: Dublin, Ireland.
+
+    Concept: Kevin Freeney.        
+    Portfolio: http://cargocollective.com/kevinafreeney         
+    Twitter: @kevfreeney
+    Location: Dublin, Ireland.
+
+    Design: Ian Maleney.      
+    Portfolio: http://ianmaleney.com/ 
+    Twitter: @ianmaleney      
+    Location: Dublin, Ireland.
+
+
+    							
+    /* THANKS */
+
+
+    COMING SOON...                    
+
+                                
+    /* SITE */
+
+                                
+    Last update: 2017/MAR/06 
+
+                                
+    Standards: HTML5, CSS3, js
+
+                                
+    Components: Modernizr, jQuery, p5.js
+
+                                
+    Software: Sublime Text 3
+       
+                            
+
+
+                    
