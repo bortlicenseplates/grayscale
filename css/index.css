@@ -7,6 +7,12 @@
 }
 
 @font-face {
+  font-family: 'destroyed';
+  font-style: normal;
+  src: url("../fonts/destroyed.ttf");
+}
+
+@font-face {
   font-family: 'monosten';
   font-style: normal;
   src: url(../fonts/Monosten-B.ttf);
@@ -20,8 +26,42 @@ html {
   background: #fff;
   font-size: 18pt;
 }
+.pc{
+  display: inline-block;
+  font-family: grayscale;
+}
 
-@media(max-width:60em){html{font-size: 90%}}
+.mobile{
+  display: none;
+  font-family: grayscale;
+}
+
+.destroyed {
+  font-family: destroyed;
+}
+.normal{
+  font-family: grayscale;
+}
+
+@media(max-width:60em){
+  html{
+    font-size: 90%
+  }
+  .normal{
+    font-family: 'Monosten';
+    font-size: 80%;
+  }
+  .mobile{
+
+    display: inline-block;
+  }
+  .pc{
+    font-size: 80%;
+    display: none;
+  }
+}
+
+
 
 /*
 
@@ -38,14 +78,67 @@ body {
   margin: 0;
   padding: 0;
   background: #fff;
+  justify-content: center;
+  align-items: center;
 
 }
 
 #container #head {
+  display: flex;
   background: rgba(255,255,255,0);
+  justify-content: center;
 }
 
-#container #head #startpage {
+#menu-container {
+  opacity: 0;
+  width: 100%;
+  position: fixed;
+  z-index: 20;
+}
+
+#menu {
+  background: #fff;
+  display: flex;
+  max-width: 70em;
+  width: 100%;
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
+}
+
+#menu #dropdown {
+  color: #888;
+  width: 100%;
+  padding-left: 1em;
+  text-align: left;
+}
+
+#menu #title {
+  color: #888;
+  width: 100%;
+  padding-right: 1em;
+  text-align: right;
+}
+
+#menu-content{
+  font-size: 1.61803398875em;
+}
+
+#fade{
+  background: -moz-radial-gradient(center, ellipse cover,  hsla(0,0%,0%,0.65) 0%, hsla(0,0%,0%,0) 74%, hsla(0,0%,0%,0) 99%);
+  background: -webkit-radial-gradient(center, ellipse cover,  hsla(0,0%,0%,0.65) 0%,hsla(0,0%,0%,0) 74%,hsla(0,0%,0%,0) 99%);
+  background: radial-gradient(ellipse at center,  hsla(0,0%,0%,0.65) 0%,hsla(0,0%,0%,0) 74%,hsla(0,0%,0%,0) 99%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a6000000', endColorstr='#00000000',GradientType=1 );
+
+  top:-2em;
+  min-height: 0.2em;
+  width: 100%;
+  display: flex;
+  position: static;
+  transform: translate(0, -100%);
+}
+
+
+#startpage {
   opacity: 0.99;
   position: static;
   background: #fff;
@@ -53,15 +146,16 @@ body {
   display: flex;
 }
 
-#container #head #startpage #hide-thing {
+#startpage #hide-thing {
   z-index: 20;
   position: absolute;
   background: #fff;
   height: 35%;
   min-width: 100%;
+  /*overflow-x: hidden;*/
 }
 
-#container #head #startpage #grayscale-container {
+#startpage #grayscale-container {
   display: flex;
   z-index: 10;
   justify-content: center;
@@ -72,7 +166,7 @@ body {
 }
 
 
-#container #head #startpage #grayscale-container iframe {
+#startpage #grayscale-container iframe {
   /*position: absolute;*/
   /*z-index: -1;*/
   overflow: auto;
@@ -80,13 +174,13 @@ body {
   align-items: center;
   max-width: 100vw;
   min-width: 100vw;
-  height: 100vh;
+  height: 100%;
   border: none;
   background: #fff;
   overflow-x: hidden;
 }
 
-#container #head #startpage #grayscale-container #grayscale-thing {
+#grayscale-container #grayscale-thing {
   /*position: absolute;*/
   /*z-index: -1;*/
   overflow: auto;
@@ -98,28 +192,28 @@ body {
   background: #fff;
 }
 
-#container #head #menu {
-  background: #fff;
-  opacity: 0;
-  color: rgb(35,35,35);
-  position: fixed;
-  display: flex;
-  width: 100%;
+#down{
   justify-content: center;
-  align-items: center;
-  text-align: center;
-  z-index: 20;
+  /*align-items: center;*/
+  display: flex;
+  position: absolute;
+  z-index: 300;
+  height: 100%;
+  width: 100vw;
+  top:75%;
+  color: #ddd;
 }
-
-#container #head #menu h1 {
-  padding: 0 1em 0 1em;
-  font-size: 6vw;
-  height: 16pt;
-  align-items: center;
-  justify-content: center;
-  display: flex;
-  min-width: 100%;
-  font-family: grayscale;
+#down span.destroyed{
+  height: 1em;
+  padding: 1em 1em 1em 1em;
+  transition: color 1s;
+  -webkit-transition: color 1s;
+/*  border-top: 1px solid;
+  border-bottom: 1px solid;*/
+}
+#down span.destroyed:hover{
+  color: black;
+  transition: color 1s;
 }
 
 #container #content {
