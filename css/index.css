@@ -296,13 +296,13 @@ CONTENT STUFF
   font-size: 1.5rem;
 }
 
-#container #content .about #section-content a {
+#about a {
   line-height: 0.7px;
   text-decoration: none;
   color: #666;
 }
 
-#container #content .about #section-content a:hover {
+#about a:hover {
   color: #999;
 }
 
