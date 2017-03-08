@@ -10,6 +10,9 @@
     <link rel="stylesheet" href="css/index.css">
     <script src="js/vendor/jquery-1.11.2.min.js"></script>
     <script src="js/scrollfade.js"></script>
+    <script src="js/clickdown.js"></script>
+    <script src="js/menuhide.js"></script>
+    <script src="js/vendor/smooth-scroll.js"></script>
   </head>
   <body>
     <div id="fb-root">
@@ -25,26 +28,34 @@
     </div>
     <div id="container">
       <div id="head">
-        <div id="menu-container">
+        <div header id="menu-container">
           <div id="menu">
             <div id="dropdown">
               <span id="menu-content" class="pc">e</span>
               <span id="menu-content" class="mobile">e</span>
+              <div id="menu-show">
+                <ul id="menu-items">
+                  <li> <a data-scroll href="#about" id="items" class="about">about</a></li>
+                  <li> <a data-scroll href="#vimeo" id="items" class="video">video</a></li>
+                  <li> <a data-scroll href="#interview" id="items" class="interview">interview</a></li>
+                  <li> <a data-scroll href="#event" id="items" class="tickets">tickets</a></li>
+                </ul>
+              </div>
+            </div>
             </div>
             <div id="title">
-              <span id="menu-content" class="pc">grayscale</span>
-              <span id="menu-content" class="mobile">gs</span>
+              <a data-scroll href="#startpage" id="menu-content" class="pc">grayscale</a>
+              <a data-scroll href="#startpage" id="menu-content" class="mobile">gs</a>
             </div>
           </div>
-          <div id="fade"></div>
-        </div>
+          
         
 
         <div id="startpage">
           <div id="hide-thing">
           </div>
           <div id="down">
-            <span class="destroyed">ab</span>
+            <a data-scroll href="#about" class="destroyed">ab</a>
           </div>
           <div id="grayscale-container">
             <iframe src="https://www.openprocessing.org/sketch/407987/"></iframe>
@@ -53,8 +64,8 @@
       </div>
       <div id="content">
         <div id="section" class="about">
-          <div id="section-content">
-            <h1>
+          <div id="about">
+            <h1 class="section-heads">
               ABOUT
             </h1>
             <p>Grayscale is a new series of events that aims to highlight audio-visual art in Ireland. The first event will take place in the Pillar Room, an ornate 18th century function room beneath the Rotunda Hospital in Dublin, on the 11th of March 2017.</p>
@@ -69,8 +80,14 @@
             <iframe src="https://player.vimeo.com/video/206395986?color=999&amp;title=0&amp;byline=0" frameborder="0" webkitallowfullscreen="" mozallowfullscreen="" allowfullscreen="" class="vimeo"></iframe>
           </div>
         </div>
+        <div id="section" class="interview">
+          <div id="interview">
+            <h1 class="section-heads">INTERVIEW WITH MR. MITCH</h1>
+
+          </div>
+        </div>
         <div id="section" class="event">
-          <iframe src="https://eventbrite.ie/tickets-external?eid=32070865823&ref=etckt" frameborder="0" height="400" width="100%" vspace="0" hspace="0" marginheight="5" marginwidth="5" scrolling="auto" allowtransparency="true"></iframe>
+          <iframe id="event" src="https://eventbrite.ie/tickets-external?eid=32070865823&ref=etckt" frameborder="0" height="400" width="100%" vspace="0" hspace="0" marginheight="5" marginwidth="5" scrolling="auto" allowtransparency="true"></iframe>
       </div>
       <div id="footer">
         <a class="me" href="humans.txt" target="_blank">humans.txt</a>
@@ -88,5 +105,14 @@
     ga('create', 'UA-93088831-1', 'auto');
     ga('send', 'pageview');
 
+  </script>
+  <script>
+    smoothScroll.init({
+      selector: '[data-scroll]', // Selector for links (must be a class, ID, data attribute, or element tag)
+      selectorHeader: '[header]', // Selector for fixed headers (must be a valid CSS selector) [optional]
+      speed: 1000, // Integer. How fast to complete the scroll in milliseconds
+      easing: 'easeInOutCubic', // Easing pattern to use
+      offset: 32, // Integer. How far to offset the scrolling anchor location in pixels
+    });
   </script>
 </html>
