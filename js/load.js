@@ -122,8 +122,8 @@ function draw() {
   
   
   transition();
-  timer(60*8);
-  if(!clicked && timeout == 60*8){
+  timer(60*4);
+  if(!clicked && timeout == 60*4){
     if (wordSwitch){
       changeWord();
     }
