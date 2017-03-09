@@ -132,7 +132,7 @@ function draw() {
     clicked = true;
     timeout = 0;
   }
-  else if(clicked && timeout >= 60*4){
+  else if(clicked && timeout >= 60*2){
     print("step 2");
     timeout = 0;
     timedOut = true;
@@ -159,19 +159,19 @@ function changeWord(){
 
 function timer(maxTime){
   if(!timedOut){
-    timeout++;
+    timeout+=2;
   }
 }
 
 function transition(){
   if (clicked){
     if (bgA < bgAM){
-      bgA++;
+      bgA+=2;
     }
     return true;
   } else { 
     if (bgA > bgAm){
-      bgA--;
+      bgA-=2;
     }
     return false;
   }
@@ -214,7 +214,7 @@ function gScale(skip, n, fade){
   } else {
     rnum = random(fade, 255);
   }
-  if(fade >= rnum/2){
+  if(fade >= rnum*0.15){
     textFont(greyFont);
     text(word.charAt(n),0,0);
   } else if (!timedOut) {
