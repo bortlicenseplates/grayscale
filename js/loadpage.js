@@ -41,8 +41,8 @@ var bgColor;
 //load fonts here
 function preload(){
   
-  theFont = loadFont("fonts/destroyed.ttf");
-  greyFont = loadFont("fonts/Grayscale.ttf");
+  theFont = loadFont("destroyed.ttf");
+  greyFont = loadFont("Grayscale.ttf");
 
 }
 //setup stuff
@@ -91,11 +91,11 @@ function setup() {
   var cnv = createCanvas(windowWidth, windowHeight);
   cnv.parent("#grayscale-container");
   cnv.id("grayscale-thing");
-  background(255); 
+  background(0); 
   noSmooth();
   frameRate(30);
   //canvas end
-  // $('#menu').css({ 'font-size' : fontSize/2 });
+  $('#menu').css({ 'font-size' : fontSize/2 });
 } 
 
 //calculates number of pad letters and total length of string
@@ -123,7 +123,7 @@ function draw() {
   
   transition();
   timer(60*8);
-  if(!clicked && timeout == 60*8){
+  if(!clicked && timeout == 60*4){
     if (wordSwitch){
       changeWord();
     }
