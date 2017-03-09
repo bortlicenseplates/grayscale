@@ -6,7 +6,7 @@ $(function(){
 		  });
     });
 
-    $('#interview-button').click(function(){
+    $('.interview').click(function(){
         
           $( "#interview-content" ).slideToggle( "slow", function() {
 		    // Animation complete.
