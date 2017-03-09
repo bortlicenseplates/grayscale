@@ -117,6 +117,15 @@ MENU CONTENT
   display: none;
 }
 
+#menu-items{
+  padding-top: 1em;
+  padding-left: 1em;
+}
+
+#menu-items #items {
+  padding-right: 1em;
+}
+
 #menu {
   background: #fff;
   display: flex;
@@ -275,6 +284,13 @@ CONTENT STUFF
   width: 100%;
 }
 
+
+/*
+
+ABOUT
+
+*/
+
 #container #content .about {
   margin-top: 5em;
   margin-bottom: 2em;
@@ -306,6 +322,13 @@ CONTENT STUFF
   color: #999;
 }
 
+
+/*
+
+Gallery
+
+*/
+
 #container #content .gallery {
   /*padding-top: 5em;*/
   width: 100%;
@@ -329,6 +352,39 @@ CONTENT STUFF
   height: 100%;
 }
 
+
+/*
+
+INTERVIEW
+
+*/
+
+.interview{
+  padding-top: 5em;
+  padding-bottom: 5em;
+}
+#interview-button{
+  vertical-align: top;
+  font-size: 0.75rem;
+  font-family: Courier;
+  color: #666
+}
+
+#interview-button:hover{
+  color: #999
+}
+
+#interview-content{
+  display: none;
+}
+
+
+/*
+
+EVENT
+
+*/
+
 #container #content .event {
   padding-top: 2em;
   padding-bottom: 1em;
@@ -350,6 +406,11 @@ CONTENT STUFF
 }
 
 
+/*
+
+FOOTER
+
+*/
 
 #footer {
   align-items: center;

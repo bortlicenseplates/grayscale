@@ -11,11 +11,13 @@
     <script src="js/vendor/jquery-1.11.2.min.js"></script>
     <script src="js/vendor/p5.min.js"</script>
     <script src="js/vendor/p5.dom.js"</script>
+    <script src="js/vendor/smooth-scroll.js"></script>
+
+    <script src="js/load-partials.js"></script>
     <script src="js/scrollfade.js"></script>
     <script src="js/clickdown.js"></script>
     <script src="js/menuhide.js"></script>
     <script src="js/load.js"></script>
-    <script src="js/vendor/smooth-scroll.js"></script>
   </head>
   <body>
     <div id="fb-root">
@@ -37,12 +39,12 @@
               <span id="menu-content" class="pc">e</span>
               <span id="menu-content" class="mobile">e</span>
               <div id="menu-show">
-                <ul id="menu-items">
-                  <li> <a data-scroll href="#about" id="items" class="about">about</a></li>
-                  <li> <a data-scroll href="#vimeo" id="items" class="video">video</a></li>
-                  <!-- <li> <a data-scroll href="#interview" id="items" class="interview">interview</a></li> -->
-                  <li> <a data-scroll href="#event" id="items" class="tickets">tickets</a></li>
-                </ul>
+                <div id="menu-items">
+                  <span id="items"><a data-scroll href="#about" class="about">about</a></span>
+                  <span id="items"><a data-scroll href="#vimeo" class="video">video</a></span>
+                  <span id="items"><a data-scroll href="#interview" class="mitch">interview</a></span>
+                  <span id="items"><a data-scroll href="#event" class="tickets">tickets</a></span>
+                </div>
               </div>
             </div>
             </div>
@@ -85,10 +87,10 @@
           </div>
         </div>
         <div id="section" class="interview">
-          <!-- <div id="interview">
-            <h1 class="section-heads">INTERVIEW WITH MR. MITCH</h1>
-
-          </div> -->
+          <div id="interview">
+            <h1 class="section-heads">INTERVIEW WITH MR. MITCH <span id="interview-button">[+]</span></h1>
+            <div id="interview-content"></div>
+          </div>
         </div>
         <div id="section" class="event">
           <iframe id="event" src="https://eventbrite.ie/tickets-external?eid=32070865823&ref=etckt" frameborder="0" height="400" width="100%" vspace="0" hspace="0" marginheight="5" marginwidth="5" scrolling="auto" allowtransparency="true"></iframe>

@@ -1,9 +1,15 @@
 $(function(){
     $('#dropdown').click(function(){
-        if($('#menu-show').css('display') == 'none'){
-            $('#menu-show').css({'display' : 'flex'});
-        } else {
-            $('#menu-show').css({'display' : 'none'});
-        }
+        
+          $( "#menu-show" ).slideToggle( "slow", function() {
+		    // Animation complete.
+		  });
+    });
+
+    $('#interview-button').click(function(){
+        
+          $( "#interview-content" ).slideToggle( "slow", function() {
+		    // Animation complete.
+		  });
     });
 });

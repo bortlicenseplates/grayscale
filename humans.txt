@@ -1,14 +1,14 @@
     /* GRAYSCALE WEB TEAM */
 
 
-    Web: James Ryan.                        
-    GitHub: https://www.gihub.com/twinpixels                      
-    Twitter: @werbderv                      
-    Location: Dublin, Ireland.
-
-    Concept: Kevin Freeney.        
+    Creative Director: Kevin Freeney.        
     Portfolio: http://cargocollective.com/kevinafreeney         
     Twitter: @kevfreeney
+    Location: Dublin, Ireland.
+
+    Web Design: James Ryan.                        
+    GitHub: https://www.gihub.com/twinpixels                      
+    Instagram: herelistenrelaxlike                      
     Location: Dublin, Ireland.
 
     Design: Ian Maleney.      
@@ -16,24 +16,35 @@
     Twitter: @ianmaleney      
     Location: Dublin, Ireland.
 
+    Typography and Astral Warrior: Richard Seabrooke.
+    Instagram: richardseabrooke
+    Celestial Coordinates: -1.643, -1.374, -3.838.
 
-    							
+							
     /* THANKS */
 
-
-    COMING SOON...                    
+    Algorithm Team {
+        Ross Ryder
+        Dillon O'Sullivan
+        Olan Clarke
+        Cormac Murray
+        Dan Staines
+        Lewis Byrne
+        Nick Linders  
+    }
+    
 
                                 
     /* SITE */
 
                                 
-    Last update: 2017/MAR/06 
+    Last update: 2017/MAR/09 00:50 GMT
 
                                 
     Standards: HTML5, CSS3, js
 
                                 
-    Components: Modernizr, jQuery, p5.js
+    Components: Modernizr, jQuery, p5.js, p5.dom.js, smoothscroll
 
                                 
     Software: Sublime Text 3
