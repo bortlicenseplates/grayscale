@@ -8,7 +8,7 @@ $(function(){
 
     $('.interview').click(function(){
         
-          $( "#interview-content" ).slideToggle( "slow", function() {
+          $( "#interview-content" ).slideToggle( "fast", function() {
 		    // Animation complete.
 		  });
     });
