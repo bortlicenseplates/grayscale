@@ -244,17 +244,19 @@ a:hover{
 
 #down{
   justify-content: center;
-  /*align-items: center;*/
+  align-items: center;
   display: flex;
   position: absolute;
   z-index: 300;
-  height: 2em;
-  width: 100vw;
+  height: 3em;
+  width: 100%;
   top:75%;
 }
-#down a.destroyed{
+#down a{
+  font-family: Verdana;
+  font-stretch: condensed;
   color: #ddd;
-  height: 1em;
+  height: 2em;
   padding: 1em 1em 1em 1em;
   transition: color 1s;
   -webkit-transition: color 1s;
@@ -262,9 +264,14 @@ a:hover{
 /*  border-top: 1px solid;
   border-bottom: 1px solid;*/
 }
-#down a.destroyed:hover{
+#down a:hover{
   color: black;
   transition: color 1s;
+}
+
+#down img{
+  border: none;
+  color-interpolation-filters: 
 }
 
 /*
@@ -283,6 +290,26 @@ CONTENT STUFF
   /*min-height: 80vh;*/
   width: 100%;
 }
+
+
+/*
+
+GALLERY
+
+*/
+
+#gal-post img{
+  /*padding: 0.2em;
+  border: 1px solid;*/
+}
+#gal-post p{
+  font-size: 0.5em;
+  font-style: italic;
+}
+#gal-post{
+  padding-bottom: 1em;
+}
+
 
 
 /*
@@ -369,15 +396,23 @@ img{
   padding-top: 4em;
   padding-bottom: 2em;
 }
-#interview-button{
-  vertical-align: top;
-  font-size: 0.75rem;
-  font-family: Courier;
-  color: #666
+
+.moreclick{
+  color:#666;
+  transition: border-bottom 1s;
+  -moz-transition:all 0.5s ease;
+  -ms-transition:all 0.5s ease;
+  -o-transition:all 0.5s ease;
+  transition:all 0.5s ease;
 }
 
-#interview-button:hover{
-  color: #999
+.moreclick:hover{
+  color: #999;
+  transition: border-bottom 1s;
+  -moz-transition:all 0.5s ease;
+  -ms-transition:all 0.5s ease;
+  -o-transition:all 0.5s ease;
+  transition:all 0.5s ease;
 }
 
 #interview-content{
