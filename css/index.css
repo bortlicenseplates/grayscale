@@ -383,7 +383,23 @@ img{
 #interview-content{
   display: none;
 }
+#iv-text{
+  font-size: 0.9rem;
+  line-height: 1.2rem;
+}
+#iv-text.question {
+  color: #454545;
+  font-size: 1em;
+  outline: 1px solid;
+}
 
+#iv-text.question{
+  padding: 0.2rem;
+}
+
+#iv-text.answer{
+  text-align: justify;
+}
 
 /*
 
