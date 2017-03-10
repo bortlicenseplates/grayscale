@@ -442,9 +442,10 @@ EVENT
 
 */
 
-#container #content .event {
+#event-container {
+
   padding-top: 2em;
-  padding-bottom: 1em;
+  padding-bottom: 4em;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -455,11 +456,10 @@ EVENT
   display: inline-block;
 }
 
-#container #content .event iframe.eventbrite {
-  height: 100%;
-  align-items: center;
-  justify-content: center;
-  position: relative;
+#event-container iframe#eventbrite {
+  font-family: 'Monosten';
+  border-color: #000;
+  border: 1px solid;
 }
 
 
