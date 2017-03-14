@@ -1,3 +1,3 @@
-#GRAYSCALE
+#GRAYSCALE#
 
 www.grayscale.ie
