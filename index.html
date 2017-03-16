@@ -18,6 +18,7 @@
     <script src="js/clickdown.js"></script>
     <script src="js/menuhide.js"></script>
     <script src="js/load.js"></script>
+    <script src="js/gallery.js"></script>
   </head>
   <body>
     <div id="fb-root">
@@ -41,6 +42,7 @@
               <div id="menu-show">
                 <div id="menu-items">
                   <span id="items"><a data-scroll href="#about" class="about">about</a></span>
+                  <span id="items"><a data-scroll href="#gallery" class="gallery">gallery</a></span>
                   <span id="items"><a data-scroll href="#vimeo" class="video">video</a></span>
                   <span id="items"><a data-scroll href="#interview" class="mitch">interview</a></span>
                   <span id="items"><a data-scroll href="#event" class="tickets">tickets</a></span>
@@ -60,7 +62,7 @@
           <!-- <div id="hide-thing">
           </div> -->
           <div id="down">
-            <a data-scroll href="#about" class="destroyed">ab</a>
+            <a data-scroll href="#content"><img src="img/down.png" /></a>
           </div>
           <div id="grayscale-container">
             <!-- <div id="grayscale-thing"></div> -->
@@ -81,6 +83,23 @@
             </p>
           </div>
         </div>
+
+        <div id="section" class="gallery">
+          <div id="gallery">
+             <h1 class="section-heads">
+              GALLERY
+            </h1>
+            <div id="gal-post">
+              <img src="gallery/MRI_HUMAN_MALE.gif" />
+              <p>Artist: Dillon O'Sullivan</p>
+            </div>
+            <div id="gal-post">
+              <img src="gallery/GRAYSCALE_Poster_Overview.png" />
+              <p>Artist: Magnus Mudrack</p>
+            </div>
+          </div>
+        </div>
+        
         <div id="section" class="gallery">
           <div id="vimeo">
             <iframe src="https://player.vimeo.com/video/206395986?color=999&amp;title=0&amp;byline=0" frameborder="0" webkitallowfullscreen="" mozallowfullscreen="" allowfullscreen="" class="vimeo"></iframe>
@@ -88,16 +107,22 @@
         </div>
         <div id="section" class="interview">
           <div id="interview">
-            <h1 class="section-heads">INTERVIEW WITH MR. MITCH <span id="interview-button">[+]</span></h1>
+            <h1 class="section-heads">INTERVIEW WITH MR. MITCH </span></h1>
+            <img src="img/image00.jpg">
+            <p>Since his first single dropped in 2010, Miles Mitchell has been pushing against the boundaries of what’s possible in grime. As an instrumental producer and DJ, Mitchell has helped redefine grime as something more than the central figure of the MC. Rather than filling the vacuum left by the absence of a vocalist, the music plays with negative space, a sense of weightlessness which sometimes spills into the euphoric. </p>
+            <p><i>Devout</i>, his second album for legendary electronic label Planet Mu, is about to appear. It’s a step in a new direction for Mitchell, featuring a host of collaborators and, for the first time, his own vocals. It’s a soft album, a late-night headphone listen, that tackles the theme of fatherhood in a major way. Whether you could still call it a grime album is almost irrelevant – <i>Devout</i> is something new, something still undefined. More than anything, it’s the sound of a musician growing more comfortable with his own story and his own sound. </p>
+            <a class="moreclick">click for more</a>
             <div id="interview-content"></div>
           </div>
         </div>
         <div id="section" class="event">
-          <iframe id="event" src="https://eventbrite.ie/tickets-external?eid=32070865823&ref=etckt" frameborder="0" height="400" width="100%" vspace="0" hspace="0" marginheight="5" marginwidth="5" scrolling="auto" allowtransparency="true"></iframe>
-      </div>
-      <div id="footer">
-        <a class="me" href="humans.txt" target="_blank">humans.txt</a>
-        <div data-href="https://www.facebook.com/grayscaledublin/" data-colorscheme="dark" data-layout="button_count" data-action="like" data-size="small" data-show-faces="true" data-share="true" class="fb-like">
+          <div id="event-container">
+            <iframe id="eventbrite" src="https://eventbrite.ie/tickets-external?eid=32070865823&ref=etckt" frameborder="0" height="360" width="100%" vspace="0" hspace="0" marginheight="5" marginwidth="5" scrolling="auto" allowtransparency="true"></iframe>
+          </div>
+        </div>
+        <div id="footer">
+          <a class="me" href="humans.txt" target="_blank">humans.txt</a>
+          <div data-href="https://www.facebook.com/grayscaledublin/" data-colorscheme="dark" data-layout="button_count" data-action="like" data-size="small" data-show-faces="true" data-share="true" class="fb-like">
         </div>
       </div>
     </div>
